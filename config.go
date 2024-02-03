@@ -82,7 +82,7 @@ var (
 	// form, exported from Sheets as a .csv, but this is subject to
 	// change in the future. Before any strategies are executed, ra2 imports
 	// students and their preferences/availabilities from this file.
-	csvFile = "./data/s22.csv"
+	csvFile = "./data/s24.csv"
 
 	// outFile is the file in which the final assignment is encoded
 	// the output methods (along with inputs, in sload.go) are responsible
@@ -126,41 +126,38 @@ const (
 // All recitations.
 var ars = map[int]*section{
 	1:  {isTutorial: false, time: tr1011, instructor: "Karen Sollins"},
-	2:  {isTutorial: false, time: tr1011, instructor: "Howard Shrobe"},
-	3:  {isTutorial: false, time: tr1011, instructor: "Henry Corrigan-Gibbs"},
+	2:  {isTutorial: false, time: tr1011, instructor: "Mark Day"},
+	3:  {isTutorial: false, time: tr1011, instructor: "Tim Kraska"},
 	4:  {isTutorial: false, time: tr1112, instructor: "Karen Sollins"},
-	5:  {isTutorial: false, time: tr1112, instructor: "Howard Shrobe"},
-	6:  {isTutorial: false, time: tr1112, instructor: "Henry Corrigan-Gibbs"},
-	7:  {isTutorial: false, time: tr121, instructor: "Larry Rudolph"},
-	8:  {isTutorial: false, time: tr12, instructor: "Larry Rudolph"},
-	9:  {isTutorial: false, time: tr12, instructor: "John Feser"},
-	10: {isTutorial: false, time: tr12, instructor: "Michael Cafarella"},
-	11: {isTutorial: false, time: tr12, instructor: "Adam Belay"},
-	12: {isTutorial: false, time: tr23, instructor: "John Feser"},
-	13: {isTutorial: false, time: tr23, instructor: "Michael Cafarella"},
+	5:  {isTutorial: false, time: tr1112, instructor: "Mark Day"},
+	6:  {isTutorial: false, time: tr1112, instructor: "Tim Kraska"},
+	7:  {isTutorial: false, time: tr1112, instructor: "Mohammad Alizadeh"},
+	8:  {isTutorial: false, time: tr121, instructor: "Mohammad Alizadeh"},
+	9:  {isTutorial: false, time: tr121, instructor: "Larry Rudolph"},
+	10:  {isTutorial: false, time: tr12, instructor: "Larry Rudolph"},
+	11: {isTutorial: false, time: tr12, instructor: "Manya Gobadi"},
+	12: {isTutorial: false, time: tr12, instructor: "Adam Belay"},
+	13: {isTutorial: false, time: tr23, instructor: "Manya Gobadi"},
 	14: {isTutorial: false, time: tr23, instructor: "Adam Belay"},
-	15: {isTutorial: false, time: tr1112, instructor: "Mohammad Alizadeh"},
-	16: {isTutorial: false, time: tr121, instructor: "Mohammad Alizadeh"},
 }
 
 // All tutorials.
 var ats = map[int]*section{
-	2:  {isTutorial: true, time: f12, instructor: "Laura McKee"},
-	3:  {isTutorial: true, time: f12, instructor: "Amy Carleton"},
-	4:  {isTutorial: true, time: f23, instructor: "Keith Clavin"},
-	5:  {isTutorial: true, time: f23, instructor: "Amy Carleton"},
-	6:  {isTutorial: true, time: f12, instructor: "David Larson"},
-	7:  {isTutorial: true, time: f23, instructor: "Michael Trice"},
-	9:  {isTutorial: true, time: f23, instructor: "Elizabeth Stevens"},
-	10: {isTutorial: true, time: f12, instructor: "Elizabeth Stevens"},
-	11: {isTutorial: true, time: f23, instructor: "David Larson"},
-	12: {isTutorial: true, time: f23, instructor: "Michael Maune"},
-	13: {isTutorial: true, time: f12, instructor: "Jessie Stickgold-Sarah"},
-	14: {isTutorial: true, time: f23, instructor: "Thomas Pickering"},
-	15: {isTutorial: true, time: f23, instructor: "Brianna Williams"},
-	16: {isTutorial: true, time: f12, instructor: "Michael Trice"},
-	17: {isTutorial: true, time: f12, instructor: "Thomas Pickering"},
-	18: {isTutorial: true, time: f12, instructor: "Brianna Williams"},
+	2:  {isTutorial: true, time: f12, instructor: "Sarah Bates"},
+	3:  {isTutorial: true, time: f12, instructor: "Keith Clavin"},
+	4:  {isTutorial: true, time: f12, instructor: "Dave Larson"},
+	5:  {isTutorial: true, time: f12, instructor: "Kate Parsons"},
+	6:  {isTutorial: true, time: f12, instructor: "Kristen Starkowski"},
+	7:  {isTutorial: true, time: f12, instructor: "Liz Stevens"},
+	8:  {isTutorial: true, time: f12, instructor: "Jessie Stickgold-Sarah"},
+	9:  {isTutorial: true, time: f23, instructor: "Rachel Molko"},
+	10: {isTutorial: true, time: f23, instructor: "Kate Parsons"},
+	11: {isTutorial: true, time: f23, instructor: "Emily Robinson"},
+	12: {isTutorial: true, time: f23, instructor: "Kristen Starkowski"},
+	13: {isTutorial: true, time: f23, instructor: "Liz Stevens"},
+	14: {isTutorial: true, time: f23, instructor: "Jessie Stickgold-Sarah"},
+	15: {isTutorial: true, time: f23, instructor: "Michael Trice"},
+
 }
 
 // Teaching teams. r2t is a map representing for each
@@ -171,12 +168,11 @@ var ats = map[int]*section{
 // necessary and ensure that instructor names match precisely
 // with those in ars and ats.
 var r2t = map[string][]string{
-	"Karen Sollins":        {"Brianna Williams"},
-	"Howard Shrobe":        {"Elizabeth Stevens"},
-	"Henry Corrigan-Gibbs": {"Amy Carleton"},
-	"Mohammad Alizadeh":    {"Laura McKee", "Keith Clavin"},
-	"Larry Rudolph":        {"Thomas Pickering"},
-	"John Feser":           {"David Larson"},
-	"Michael Cafarella":    {"Jessie Stickgold-Sarah", "Michael Maune"},
-	"Adam Belay":           {"Michael Trice"},
+	"Mohammad Alizadeh":    {"Kate Parsons"},
+	"Adam Belay":           {"Liz Stevens"},
+	"Mark Day":				{"Sarah Bates", "Rachel Molko"},
+	"Manya Gobadi":			{"Kristen Starkowski"},
+	"Tim Kraska":			{"Keith Clavin", "Michael Trice"},
+	"Larry Rudolph": 		{"Dave Larson", "Emily Robinson"},
+	"Karen Sollins":		{"Jessie Stickgold-Sarah"},
 }
