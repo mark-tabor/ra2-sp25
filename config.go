@@ -135,9 +135,9 @@ var ars = map[int]*section{
 	8:  {isTutorial: false, time: tr121, instructor: "Mohammad Alizadeh"},
 	9:  {isTutorial: false, time: tr121, instructor: "Larry Rudolph"},
 	10:  {isTutorial: false, time: tr12, instructor: "Larry Rudolph"},
-	11: {isTutorial: false, time: tr12, instructor: "Manya Gobadi"},
+	11: {isTutorial: false, time: tr12, instructor: "Manya Ghobadi"},
 	12: {isTutorial: false, time: tr12, instructor: "Adam Belay"},
-	13: {isTutorial: false, time: tr23, instructor: "Manya Gobadi"},
+	13: {isTutorial: false, time: tr23, instructor: "Manya Ghobadi"},
 	14: {isTutorial: false, time: tr23, instructor: "Adam Belay"},
 }
 
@@ -171,7 +171,7 @@ var r2t = map[string][]string{
 	"Mohammad Alizadeh":    {"Kate Parsons"},
 	"Adam Belay":           {"Liz Stevens"},
 	"Mark Day":				{"Sarah Bates", "Rachel Molko"},
-	"Manya Gobadi":			{"Kristen Starkowski"},
+	"Manya Ghobadi":			{"Kristen Starkowski"},
 	"Tim Kraska":			{"Keith Clavin", "Michael Trice"},
 	"Larry Rudolph": 		{"Dave Larson", "Emily Robinson"},
 	"Karen Sollins":		{"Jessie Stickgold-Sarah"},
