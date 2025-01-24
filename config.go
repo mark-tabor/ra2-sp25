@@ -82,7 +82,7 @@ var (
 	// form, exported from Sheets as a .csv, but this is subject to
 	// change in the future. Before any strategies are executed, ra2 imports
 	// students and their preferences/availabilities from this file.
-	csvFile = "./data/s24.csv"
+	csvFile = "./data/s25.csv"
 
 	// outFile is the file in which the final assignment is encoded
 	// the output methods (along with inputs, in sload.go) are responsible
@@ -127,32 +127,32 @@ const (
 var ars = map[int]*section{
 	1:  {isTutorial: false, time: tr1011, instructor: "Karen Sollins"},
 	2:  {isTutorial: false, time: tr1011, instructor: "Mark Day"},
-	3:  {isTutorial: false, time: tr1011, instructor: "Tim Kraska"},
+	3:  {isTutorial: false, time: tr1011, instructor: "Hari Balakrishnan"},
 	4:  {isTutorial: false, time: tr1112, instructor: "Karen Sollins"},
 	5:  {isTutorial: false, time: tr1112, instructor: "Mark Day"},
-	6:  {isTutorial: false, time: tr1112, instructor: "Tim Kraska"},
-	7:  {isTutorial: false, time: tr1112, instructor: "Mohammad Alizadeh"},
-	8:  {isTutorial: false, time: tr121, instructor: "Mohammad Alizadeh"},
+	6:  {isTutorial: false, time: tr1112, instructor: "Hari Balakrishnan"},
+	7:  {isTutorial: false, time: tr1112, instructor: "Lili Wilson"},
+	8:  {isTutorial: false, time: tr121, instructor: "Lili Wilson"},
 	9:  {isTutorial: false, time: tr121, instructor: "Larry Rudolph"},
 	10:  {isTutorial: false, time: tr12, instructor: "Larry Rudolph"},
-	11: {isTutorial: false, time: tr12, instructor: "Manya Ghobadi"},
-	12: {isTutorial: false, time: tr12, instructor: "Adam Belay"},
-	13: {isTutorial: false, time: tr23, instructor: "Manya Ghobadi"},
-	14: {isTutorial: false, time: tr23, instructor: "Adam Belay"},
+	11: {isTutorial: false, time: tr12, instructor: "Olivia Brode-Roger"},
+	12: {isTutorial: false, time: tr12, instructor: "Katrina LaCurts"},
+	13: {isTutorial: false, time: tr23, instructor: "Olivia Brode-Roger"},
+	14: {isTutorial: false, time: tr23, instructor: "Katrina LaCurts"},
 }
 
 // All tutorials.
 var ats = map[int]*section{
 	2:  {isTutorial: true, time: f12, instructor: "Sarah Bates"},
-	3:  {isTutorial: true, time: f12, instructor: "Keith Clavin"},
-	4:  {isTutorial: true, time: f12, instructor: "Dave Larson"},
+	3:  {isTutorial: true, time: f12, instructor: "Katie Bruner"},
 	5:  {isTutorial: true, time: f12, instructor: "Kate Parsons"},
-	6:  {isTutorial: true, time: f12, instructor: "Kristen Starkowski"},
-	7:  {isTutorial: true, time: f12, instructor: "Liz Stevens"},
+	4:  {isTutorial: true, time: f12, instructor: "Liz Stevens"},
 	8:  {isTutorial: true, time: f12, instructor: "Jessie Stickgold-Sarah"},
-	9:  {isTutorial: true, time: f23, instructor: "Rachel Molko"},
-	10: {isTutorial: true, time: f23, instructor: "Kate Parsons"},
-	11: {isTutorial: true, time: f23, instructor: "Emily Robinson"},
+	6:  {isTutorial: true, time: f12, instructor: "Rebecca Thorndike-Breeze"},
+	7:  {isTutorial: true, time: f12, instructor: "Michael Trice"},
+	9:  {isTutorial: true, time: f23, instructor: "Sarah Bates"},
+	10: {isTutorial: true, time: f23, instructor: "Nicole Cunningham-Frisbey"},
+	11: {isTutorial: true, time: f23, instructor: "Rachel Molko"},
 	12: {isTutorial: true, time: f23, instructor: "Kristen Starkowski"},
 	13: {isTutorial: true, time: f23, instructor: "Liz Stevens"},
 	14: {isTutorial: true, time: f23, instructor: "Jessie Stickgold-Sarah"},
@@ -168,11 +168,11 @@ var ats = map[int]*section{
 // necessary and ensure that instructor names match precisely
 // with those in ars and ats.
 var r2t = map[string][]string{
-	"Mohammad Alizadeh":    {"Kate Parsons"},
-	"Adam Belay":           {"Liz Stevens"},
-	"Mark Day":				{"Sarah Bates", "Rachel Molko"},
-	"Manya Ghobadi":			{"Kristen Starkowski"},
-	"Tim Kraska":			{"Keith Clavin", "Michael Trice"},
-	"Larry Rudolph": 		{"Dave Larson", "Emily Robinson"},
-	"Karen Sollins":		{"Jessie Stickgold-Sarah"},
+	"Hari Balakrishnan":    {"Liz Stevens"},
+	"Olivia Brode-Roger":   {"Rebecca Thorndike-Breeze", "Rachel Molko"},
+	"Mark Day":				{"Katie Bruner", "Nicole Cunningham-Frisbey"},
+	"Katrina LaCurts":		{"Jessie Stickgold-Sarah"},
+	"Larry Rudolph":		{"Kate Parsons", "Kristen Starkowski"},
+	"Karen Sollins": 		{"Michael Trice"},
+	"Lili Wilson":			{"Sarah Bates"},
 }
