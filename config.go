@@ -82,7 +82,7 @@ var (
 	// form, exported from Sheets as a .csv, but this is subject to
 	// change in the future. Before any strategies are executed, ra2 imports
 	// students and their preferences/availabilities from this file.
-	csvFile = "./data/s25.csv"
+	csvFile = "./data/filtered_data.csv"
 
 	// outFile is the file in which the final assignment is encoded
 	// the output methods (along with inputs, in sload.go) are responsible
