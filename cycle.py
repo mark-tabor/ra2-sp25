@@ -63,17 +63,39 @@ def find_cycles(G):
     cycles = list(nx.simple_cycles(G))
     return sorted([list(cycle) for cycle in cycles], key=len, reverse=True)
 
+def optimal_removal(G):
+    """
+    Iteratively remove cycles and see which selection of cycles results in the most students being satisfied
+    """
+    cycles = find_cycles(G)
+    if not cycles:
+        return [], 0
+
+    max_cycle_groups = []
+    max_count = 0
+    for cycle in cycles:
+        G_c = G.copy()
+        for node in cycle:
+            G_c.remove_node(node)
+        cycle_groups, count = optimal_removal(G_c)
+        if len(cycle) + count > max_count:
+            max_cycle_groups = cycle_groups + [cycle]
+            max_count = len(cycle) + count
+    return max_cycle_groups, max_count
+
 def main():
     file_path = "./form_data.csv"
     df = data_process(file_path)
+    num_students = df.shape[0]
     G = df_to_graph(df)
-    swap_chains = find_cycles(G)
+    swap_chains, count = optimal_removal(G)
 
     if swap_chains:
-        print("Potential swaps:")
-        for i, swap_chain in enumerate(swap_chains):
+        print(f"Best free swaps ({round(count/num_students*100, 2)}% fix rate):")
+        for i, swap_chain in enumerate(reversed(swap_chains)):
             names = [name for name, _ in swap_chain]
             print(f"{i+1}. {" -> ".join(names)}")
+        print("Remember to manually fix schedule conflicts and confirm special cases/exceptions.")
     else:
         print("No easy swaps found. Rip.")
 
