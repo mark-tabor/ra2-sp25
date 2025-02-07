@@ -354,7 +354,8 @@ def shift_path(G, df, sc_students, sections_u, sections_v, tutorial=True):
                     print(f"\t{i+1}. " + " -> ".join(node[0] for node in path if node != source and node != sink))
                 print("Potential paths (ranked by number of schedule conflicts fixed):")
                 for i, path in enumerate(sorted(paths, key=lambda path: sum(1 for node in path if node[0] in sc_students), reverse=True)):
-                    print(f"\t{i+1}. " + " -> ".join(node[0] for node in path if node != source and node != sink))
+                    sc_count = sum(1 for name in path if name[0] in sc_students)
+                    print(f"\t{i+1}. ({sc_count}) " + " -> ".join(node[0] for node in path if node != source and node != sink))
             else:
                 print(f"No free paths from {section_u} to {section_v}")
     if not found_some:
@@ -381,14 +382,38 @@ def main():
 
     # Find path from section A to section B
     sections_u = [
-        "TR 11am-12pm with Hari Balakrishnan",
-        "TR 1-2pm with Katrina LaCurts",
+        "F 1-2pm with Liz Stevens",
+        # "F 1-2pm with Michael Trice",
+        # "F 1-2pm with Jessie Stickgold-Sarah",
+        "F 1-2pm with Kate Parsons",
+        # "F 1-2pm with Sarah Bates",
+        "F 1-2pm with Katie Bruner",
+        # "F 1-2pm with Rebecca Thorndike-Breeze",
+        # "F 2-3pm with Liz Stevens",
+        "F 2-3pm with Michael Trice",
+        # "F 2-3pm with Jessie Stickgold-Sarah",
+        # "F 2-3pm with Kristen Starkowski",
+        # "F 2-3pm with Sarah Bates",
+        "F 2-3pm with Nicole Cunningham-Frisbey",
+        # "F 2-3pm with Rachel Molko"
     ]
     sections_v = [
-        "TR 10-11am with Hari Balakrishnan",
-        "TR 2-3pm with Katrina LaCurts",
+        # "F 1-2pm with Liz Stevens",
+        # "F 1-2pm with Michael Trice",
+        # "F 1-2pm with Jessie Stickgold-Sarah",
+        # "F 1-2pm with Kate Parsons",
+        # "F 1-2pm with Sarah Bates",
+        # "F 1-2pm with Katie Bruner",
+        "F 1-2pm with Rebecca Thorndike-Breeze",
+        # "F 2-3pm with Liz Stevens",
+        # "F 2-3pm with Michael Trice",
+        # "F 2-3pm with Jessie Stickgold-Sarah",
+        # "F 2-3pm with Kristen Starkowski",
+        # "F 2-3pm with Sarah Bates",
+        # "F 2-3pm with Nicole Cunningham-Frisbey",
+        # "F 2-3pm with Rachel Molko"
     ]
-    shift_path(G, df, sc_students, sections_u, sections_v, False)
+    shift_path(G, df, sc_students, sections_u, sections_v)
 
     print("\nRemember to manually fix schedule conflicts and confirm special cases/exceptions!\n")
 
